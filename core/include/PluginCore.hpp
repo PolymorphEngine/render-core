@@ -2,6 +2,7 @@
 
 #include "polymorph/engine/api/plugin/APlugin.hpp"
 #include "polymorph/engine/config/XmlComponent.hpp"
+#include "modules/WindowModule.hpp"
 
 namespace polymorph::engine::api
 {
@@ -26,6 +27,9 @@ namespace polymorph::engine::api
             std::unique_ptr<AComponentFactory> createComponentFactory() override;
 
             std::unique_ptr<ASerializableObjectFactory> createSerializableObjectFactory() override;
+
+        private:
+            std::shared_ptr<render::DisplayModule> _window;
     };
 
 } // namespace polymorph::engine::api
