@@ -35,6 +35,7 @@ namespace polymorph::engine::api
     void PluginCore::startScripts(std::shared_ptr<Scene> &scene)
     {
         auto settings = getConfig<render::VideoSettings>();
+        settings->build();
         _window = std::make_shared<render::DisplayModule>(settings,
                 _game.getTitle(), _game.getPluginManager());
         if (!_game.isDebugMode())
